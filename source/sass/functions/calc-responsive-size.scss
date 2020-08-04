@@ -1,0 +1,14 @@
+@function calcResponsiveSize($value-min, $value-max, $container-min: 320px, $container-max: $desktop-container, $units: px) {
+  $value-min: strip-unit($value-min);
+  $value-max: strip-unit($value-max);
+  $container-min: strip-unit($container-min);
+  $container-max: strip-unit($container-max);
+
+  $a: ($value-min);
+  $b: ($container-min);
+
+  $a: $a + $units;
+  $b: $b + $units;
+
+  @return calc(#{$a} + (#{$value-max} - #{$value-min}) * (100vw - #{$b}) / (#{$container-max} - #{$container-min}));
+}

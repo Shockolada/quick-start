@@ -1,0 +1,19 @@
+.button {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  background-color: $color-accent;
+
+  transition: 0.3s all linear;
+}
+
+.button:hover,
+.button:focus {
+  transform: scale(1.1);
+}

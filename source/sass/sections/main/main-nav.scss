@@ -1,0 +1,26 @@
+.main-nav {}
+
+.main-nav__list {
+  @include list-reset;
+}
+
+.main-nav__item {}
+
+.main-nav__link {}
+
+.main-nav__link:hover,
+.main-nav__link:focus {}
+
+.main-nav__link.active {}
+
+
+@media (min-width: $desktop_xs) {
+  .main-nav__list {
+    display: flex;
+    margin: 0 -10px;
+  }
+
+  .main-nav__item {
+    margin: 0 10px;
+  }
+}

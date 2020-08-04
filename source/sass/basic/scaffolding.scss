@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: $color-accent;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+
+  font-family: $font;
+  font-size: 18px;
+  font-weight: 400;
+  color: $color-text;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  transition: 0.3s color linear;
+}
+
+a:hover {
+  color: $color-accent;
+}
+
+button {
+  cursor: pointer;
+}
+
+svg {
+  transition: 0.3s fill linear;
+}

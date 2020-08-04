@@ -1,0 +1,27 @@
+.page-header__wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  padding: 13px 0;
+
+  transition: all 0.5s ease;
+}
+
+.page-header__wrap.scrolled {
+  position: fixed;
+  padding: 8px 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.page-header__logo {
+  font-size: 0;
+}
