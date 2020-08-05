@@ -6,12 +6,18 @@
 
 .main-nav__item {}
 
-.main-nav__link {}
+.main-nav__link {
+  text-decoration: none;
+  color: $color-text;
+}
 
-.main-nav__link:hover,
-.main-nav__link:focus {}
+.main-nav__link:hover {
+  color: $color-accent;
+}
 
-.main-nav__link.active {}
+.main-nav__link.active {
+  color: $color-accent;
+}
 
 
 @media (min-width: $desktop_xs) {

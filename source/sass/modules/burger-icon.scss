@@ -1,23 +1,13 @@
-.burger-btn {
+.burger-icon {
   --line-height: 2px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-.burger-btn__icon {
+  flex-shrink: 0;
   position: relative;
-  width: 17px;
+  width: 20px;
   height: 14px;
 }
 
-.burger-btn__line {
+.burger-icon__line {
   position: absolute;
   left: 0;
   width: 100%;
@@ -26,27 +16,27 @@
   background-color: #555555;
 }
 
-.burger-btn__line--top {
+.burger-icon__line--top {
   top: 0;
   transition: top 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s,
     opacity 0.1s linear 0.22s;
 }
 
-.burger-btn__line--middle {
+.burger-icon__line--middle {
   top: calc(50% - (var(--line-height) / 2));
   transition: top 0.12s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s,
     transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.13s;
 }
 
-.burger-btn__line--bottom {
+.burger-icon__line--bottom {
   top: calc(100% - (var(--line-height)));
   transition-delay: 0.13s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition-duration: 0.13s;
 }
 
-.burger-btn.active {
-  .burger-btn__line--top {
+.active > .burger-icon {
+  .burger-icon__line--top {
     top: calc(50% - (var(--line-height) / 2));
     transform: rotate(-45deg);
 
@@ -55,14 +45,14 @@
     opacity: 0;
   }
 
-  .burger-btn__line--middle {
+  .burger-icon__line--middle {
     top: calc(50% - (var(--line-height) / 2));
     transition: top 0.1s cubic-bezier(0.33333, 0, 0.66667, 0.33333) 0.3s,
       transform 0.13s cubic-bezier(0.215, 0.61, 0.355, 1) 0.25s;
     transform: rotate(-135deg);
   }
 
-  .burger-btn__line--bottom {
+  .burger-icon__line--bottom {
     top: calc(50% - (var(--line-height) / 2));
     transition-delay: 0.22s;
     transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);

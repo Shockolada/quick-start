@@ -1,4 +1,4 @@
-.page-header__wrap {
+.page-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,19 +9,33 @@
   transition: all 0.5s ease;
 }
 
-.page-header__wrap.scrolled {
+.page-header.scrolled {
   position: fixed;
   padding: 8px 0;
   background-color: #ffffff;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
-.page-header {
+.page-header__container {
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.page-header__logo {
+.page-header__logo-box {
   font-size: 0;
+}
+
+.page-header__menu-btn {
+  margin-left: auto;
+}
+
+@media (min-width: $desktop_xs) {
+  .page-header__menu {
+    margin-left: auto;
+  }
+
+  .page-header__menu-btn {
+    display: none;
+  }
 }
