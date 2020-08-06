@@ -18,7 +18,7 @@ body {
   font-family: $font;
   font-size: 18px;
   font-weight: 400;
-  color: $color-text;
+  color: $color-text !important;
 }
 
 img {
@@ -40,4 +40,15 @@ button {
 
 svg {
   transition: 0.3s fill linear;
+}
+
+
+.test {
+  @include responsiveFontSize(16, 30, 320, 1200, px);
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  @include bg(none, no-repeat, contain, top);
 }

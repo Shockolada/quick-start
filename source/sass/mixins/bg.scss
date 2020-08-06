@@ -1,0 +1,9 @@
+@mixin bg ($url: none, $repeat: no-repeat, $size: cover, $position: center) {
+  @if $url !=none {
+    background-image: url(#{$url});
+  }
+
+  background-repeat: $repeat;
+  background-size: $size;
+  background-position: $position;
+}

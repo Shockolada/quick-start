@@ -1,4 +1,10 @@
-// import
+import svgxuse from 'svgxuse';
+import $ from 'jquery'
+
+console.log('ahaha');
+
+
+
 // $(document).ready(function () {
 //   /* WHEN DEVICE WIDTH CHANGED */
 //   let windowWidth = 0;
