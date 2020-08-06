@@ -1,6 +1,4 @@
 // import
-
-
 // $(document).ready(function () {
 //   /* WHEN DEVICE WIDTH CHANGED */
 //   let windowWidth = 0;

@@ -30,6 +30,7 @@
     "core-js": "^3.6.5",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
     "gulp-csso": "^4.0.1",
     "gulp-debug": "^4.0.0",
     "gulp-file-include": "^2.2.2",
@@ -47,6 +48,7 @@
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.10.4"
+    "@babel/polyfill": "^7.10.4",
+    "jquery": "^3.5.1"
   }
 }

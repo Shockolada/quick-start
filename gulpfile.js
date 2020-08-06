@@ -2,6 +2,7 @@
 
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
+const concat = require('gulp-concat');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -81,7 +82,7 @@ gulp.task('build-js', () => {
     .pipe(webpack({
       mode: 'development',
       output: {
-        filename: 'main.js'
+        filename: 'bundle.js'
       },
       watch: false,
       devtool: 'source-map',
@@ -104,10 +105,23 @@ gulp.task('build-js', () => {
         }]
       }
     }))
-    .pipe(gulp.dest(dist + 'js'))
-    .on('end', server.reload);
+    .pipe(gulp.dest(src + 'js'));
+    // .on('end', server.reload);
 });
 
+/* SCRIPTS */
+gulp.task('concat', function() {
+  return gulp.src([
+    'node_modules/jquery/dist/jquery.min.js',
+    src + 'js/bundle.js',
+  ])
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest(dist + 'js'));
+});
+
+gulp.task('scripts', gulp.series('build-js', 'concat', done => {
+  done();
+}));
 
 
 /* SERVER */
@@ -121,7 +135,7 @@ gulp.task('server', () => {
   });
 
   gulp.watch(src + '**/*.html', gulp.parallel('html')).on('change', server.reload);
-  gulp.watch(src + 'js/**/*.js', gulp.series('build-js'));
+  gulp.watch([src + 'js/**/*.js', '!' + src + 'js/bundle.js'], gulp.series('scripts')).on('change', server.reload);
   gulp.watch(src + 'sass/**/*.{scss,sass}', gulp.parallel('styles'));
   gulp.watch(src + 'css/**/*.css', gulp.parallel('css'));
   gulp.watch([src + 'img/**/*.{png,jpg,svg}', '!src/img/svg/**/*.*'], gulp.parallel('imagesmin')).on('change', server.reload);
@@ -224,7 +238,7 @@ gulp.task('clean', () => {
 
 
 /* TASKS */
-gulp.task('build', gulp.parallel('styles', 'copy', 'css', 'html', 'build-js', 'images'));
+gulp.task('build', gulp.parallel('styles', 'copy', 'css', 'html', 'scripts', 'images'));
 gulp.task('default', gulp.series('build', 'server'));
 
 
