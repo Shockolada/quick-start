@@ -84,7 +84,7 @@ gulp.task('concat-css', () => {
 
 // Single css files
 gulp.task('css-single', () => {
-  return gulp.src(src + 'css/single/**/*.css')
+  return gulp.src(src + 'css/independent/**/*.css')
     .pipe(plumber({
       errorHandler: onError
     }))
@@ -162,8 +162,8 @@ gulp.task('server', () => {
   gulp.watch([src + 'js/**/*.js', '!' + src + 'js/bundle/**/*.*'], gulp.series('build-js'));
   gulp.watch(src + 'js/bundle/**/*.js', gulp.series('concat-js')).on('change', server.reload);
   gulp.watch(src + 'sass/**/*.{scss,sass}', gulp.parallel('sass'));
-  gulp.watch([src + 'css/**/*.css', '!' + src + 'css/single/**/*.*'], gulp.parallel('concat-css'));
-  gulp.watch(src + 'css/single/**/*.css', gulp.parallel('css-single')); 
+  gulp.watch([src + 'css/**/*.css', '!' + src + 'css/independent/**/*.*'], gulp.parallel('concat-css'));
+  gulp.watch(src + 'css/independent/**/*.css', gulp.parallel('css-single')); 
   gulp.watch([src + 'img/**/*.{png,jpg,svg}', '!src/img/svg/**/*.*'], gulp.parallel('imagesmin')).on('change', server.reload);
   gulp.watch(src + 'img/svg/**/*.svg', gulp.parallel('svgsprite'));
   gulp.watch(src + 'fonts/**/*.*', gulp.parallel('copy')).on('change', server.reload);
@@ -236,12 +236,12 @@ gulp.task('copy', () => {
       src + 'fonts/**/*.{woff,woff2,otf,ttf,eot}',
       src + 'favicons/**/*.*',
     ], {
-      base: 'src'
+      base: src
     }, {
       since: gulp.lastRun('copy')
     })
     .pipe(newer(dist)) // Сверяет файлы в исходной и конечной папке, 
-    // пропуская если файла нет или дата модификации новее
+                        // пропуская если файла нет или дата модификации новее
     .pipe(debug({
       title: 'copy' // Показывает какие файлы скопированы
     }))
@@ -287,8 +287,8 @@ gulp.task('serve-prod', () => {
   gulp.watch([src + 'js/**/*.js', '!' + src + 'js/bundle/**/*.*'], gulp.series('build-js-prod'));
   gulp.watch(src + 'js/bundle/**/*.js', gulp.series('concat-js-prod')).on('change', server.reload);
   gulp.watch(src + 'sass/**/*.{scss,sass}', gulp.parallel('sass'));
-  gulp.watch([src + 'css/**/*.css', '!' + src + 'css/single/**/*.*'], gulp.parallel('concat-css-prod'));
-  gulp.watch(src + 'css/single/**/*.css', gulp.parallel('css-single')); 
+  gulp.watch([src + 'css/**/*.css', '!' + src + 'css/independent/**/*.*'], gulp.parallel('concat-css-prod'));
+  gulp.watch(src + 'css/independent/**/*.css', gulp.parallel('css-single')); 
   gulp.watch([src + 'img/**/*.{png,jpg,svg}', '!src/img/svg/**/*.*'], gulp.parallel('imagesmin')).on('change', server.reload);
   gulp.watch(src + 'img/svg/**/*.svg', gulp.parallel('svgsprite'));
   gulp.watch(src + 'fonts/**/*.*', gulp.parallel('copy')).on('change', server.reload);
@@ -331,7 +331,7 @@ gulp.task('concat-css-prod', () => {
 
 /* JAVASCRIPT */
 gulp.task('build-js-prod', () => {
-  return gulp.src(src + 'js/main.js')
+  return gulp.src(src + 'js/index.js')
     .pipe(webpack({
       mode: 'production',
       output: {

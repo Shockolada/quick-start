@@ -1,7 +1,7 @@
 import svgxuse from 'svgxuse';
 import $ from 'jquery'
 
-console.log('ahaha');
+console.log('test');
 
 
 
