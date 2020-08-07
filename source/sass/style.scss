@@ -1,6 +1,6 @@
 @import "variables/variables.scss";
 
-@import "functions/strip-units.scss";
+@import "functions/crop-units.scss";
 @import "functions/calc-responsive-size.scss";
 
 @import "mixins/responsive-font-size.scss";
@@ -32,6 +32,7 @@
 @import "helpers/container.scss";
 @import "helpers/title.scss";
 @import "helpers/button.scss";
+@import "helpers/scroll-lock.scss";
 @import "helpers/modal.scss";
 
 /* SECTIONS */

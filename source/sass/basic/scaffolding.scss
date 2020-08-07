@@ -52,3 +52,7 @@ svg {
   height: 200px;
   @include bg(none, no-repeat, contain, top);
 }
+
+.test {
+  @include responsiveFontSize(16, 40, 320, 1200, px, 17px)
+}

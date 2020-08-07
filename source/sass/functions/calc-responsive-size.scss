@@ -1,8 +1,8 @@
 @function calcResponsiveSize($value-min, $value-max, $container-min: $mobile_s, $container-max: $desktop-container, $units: px) {
-  $value-min: strip-unit($value-min);
-  $value-max: strip-unit($value-max);
-  $container-min: strip-unit($container-min);
-  $container-max: strip-unit($container-max);
+  $value-min: cropUnits($value-min);
+  $value-max: cropUnits($value-max);
+  $container-min: cropUnits($container-min);
+  $container-max: cropUnits($container-max);
 
   $a: ($value-min);
   $b: ($container-min);

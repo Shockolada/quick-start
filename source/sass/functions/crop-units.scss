@@ -1,4 +1,4 @@
-@function strip-unit($number) {
+@function cropUnits($number) {
 
   @if type-of($number)=='number'and not unitless($number) {
     @return $number / ($number * 0 + 1);

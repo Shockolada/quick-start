@@ -1,12 +1,13 @@
 @mixin responsiveFontSize($font-min, $font-max, $container-min: $mobile_s, $container-max: $desktop-container, $units: px, $fallback: false) {
 
   @if ($fallback) {
-    font-size: $fallback;
+    $fallback: cropUnits($fallback);
+    font-size: $fallback + $units;
   }
 
   font-size: calcResponsiveSize($font-min, $font-max, $container-min, $container-max, $units);
 
-  $container-max: strip-unit($container-max);
+  $container-max: cropUnits($container-max);
 
   @media (min-width: $container-max + $units) {
     font-size: $font-max + $units;

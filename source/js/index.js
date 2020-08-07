@@ -1,5 +1,10 @@
 import svgxuse from 'svgxuse';
-import $ from 'jquery'
+import $ from 'jquery';
+import modals from './modules/modal';
+
+window.addEventListener('DOMContentLoaded', () => {
+  modals();
+});
 
 console.log('test');
 
