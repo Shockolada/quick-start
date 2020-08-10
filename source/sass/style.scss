@@ -21,12 +21,6 @@
 
 /* LIBRARIES */
 
-/* MODULES */
-@import "modules/burger-btn.scss";
-@import "modules/burger-icon.scss";
-@import "modules/close-btn.scss";
-// @import "modules/modal.scss";
-
 /* HELPERS */
 @import "helpers/page-content.scss";
 @import "helpers/container.scss";
@@ -34,6 +28,11 @@
 @import "helpers/button.scss";
 @import "helpers/scroll-lock.scss";
 @import "helpers/modal.scss";
+
+/* MODULES */
+@import "modules/burger-btn.scss";
+@import "modules/burger-icon.scss";
+@import "modules/close-btn.scss";
 
 /* SECTIONS */
 @import "sections/main/page-header.scss";

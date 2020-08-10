@@ -1,4 +1,5 @@
 .page-header {
+  // position: sticky;
   position: fixed;
   top: 0;
   left: 0;
@@ -6,11 +7,10 @@
   width: 100%;
   padding: 13px 0;
 
-  transition: all 0.5s ease;
+  transition: 0.5s all ease;
 }
 
 .page-header.scrolled {
-  position: fixed;
   padding: 8px 0;
   background-color: #ffffff;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
