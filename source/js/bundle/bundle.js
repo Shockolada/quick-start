@@ -12811,7 +12811,7 @@ var modals = function modals() {
           evt.preventDefault();
         }
 
-        openModal(modal, overlay);
+        openModal();
       });
     });
     close.forEach(function (item) {
@@ -12820,35 +12820,35 @@ var modals = function modals() {
           evt.preventDefault();
         }
 
-        closeModal(modal, overlay);
+        closeModal();
       });
     });
     modal.addEventListener('click', function (evt) {
       if (evt.target === modal) {
-        closeModal(modal, overlay);
+        closeModal();
       }
     });
-  }
 
-  function openModal(modal, overlay) {
-    modal.classList.add('active');
-    document.body.classList.add('scroll-lock');
-    overlay.classList.add('active');
-    document.addEventListener('keydown', closeByEsc);
-  }
+    function openModal() {
+      modal.classList.add('active');
+      document.body.classList.add('scroll-lock');
+      overlay.classList.add('active');
+      document.addEventListener('keydown', closeByEsc);
+    }
 
-  function closeModal(modal, overlay) {
-    document.body.classList.remove('scroll-lock');
-    modal.classList.remove('active');
-    overlay.classList.remove('active');
-    document.removeEventListener('keydown', closeByEsc);
-  }
+    function closeModal() {
+      document.body.classList.remove('scroll-lock');
+      modal.classList.remove('active');
+      overlay.classList.remove('active');
+      document.removeEventListener('keydown', closeByEsc);
+    }
 
-  function closeByEsc(evt) {
-    console.log('closed');
+    function closeByEsc(evt) {
+      console.log('closed');
 
-    if (evt.which === 27 && modal.classList.contains('active')) {
-      closeModal(modal, overlay);
+      if (evt.which === 27 && modal.classList.contains('active')) {
+        closeModal();
+      }
     }
   }
 

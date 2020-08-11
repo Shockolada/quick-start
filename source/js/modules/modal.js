@@ -12,7 +12,7 @@ const modals = () => {
           evt.preventDefault();
         }
 
-        openModal(modal, overlay);
+        openModal();
       });
     });
 
@@ -22,39 +22,40 @@ const modals = () => {
           evt.preventDefault();
         }
 
-        closeModal(modal, overlay);
+        closeModal();
       });
     });
 
     modal.addEventListener('click', (evt) => {
       if (evt.target === modal) {
-        closeModal(modal, overlay);
+        closeModal();
       }
     });
-  }
 
-  function openModal(modal, overlay) {
-    modal.classList.add('active');
-    document.body.classList.add('scroll-lock');
-    overlay.classList.add('active');
-
-    document.addEventListener('keydown', closeByEsc);
-  }
-
-  function closeModal(modal, overlay) {
-    document.body.classList.remove('scroll-lock');
-    modal.classList.remove('active');
-    overlay.classList.remove('active');
-
-    document.removeEventListener('keydown', closeByEsc);
-  }
-
-  function closeByEsc(evt) {
-    console.log('closed');
-    if (evt.which === 27 && modal.classList.contains('active')) {
-      closeModal(modal, overlay);
+    function openModal() {
+      modal.classList.add('active');
+      document.body.classList.add('scroll-lock');
+      overlay.classList.add('active');
+  
+      document.addEventListener('keydown', closeByEsc);
+    }
+  
+    function closeModal() {
+      document.body.classList.remove('scroll-lock');
+      modal.classList.remove('active');
+      overlay.classList.remove('active');
+  
+      document.removeEventListener('keydown', closeByEsc);
+    }
+  
+    function closeByEsc(evt) {
+      console.log('closed');
+      if (evt.which === 27 && modal.classList.contains('active')) {
+        closeModal();
+      }
     }
   }
+
 
   bindModal('[data-trigger-modal', '#modal', '.modal__close');
   bindModal('[data-trigger-modal-2', '#modal-2', '.modal__close');
