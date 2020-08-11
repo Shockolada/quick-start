@@ -1,14 +1,20 @@
 import svgxuse from 'svgxuse';
 import $ from 'jquery';
 import modals from './modules/modal';
+import pageHeader from './modules/header';
+import menu from './modules/menu';
+import pushFooterDown from './modules/push-footer';
+import {slidingUp, slidingDown} from './services/sliding';
+
 
 window.addEventListener('DOMContentLoaded', () => {
+  'use strict';
+
   modals();
+  pageHeader();
+  menu();
+  pushFooterDown();
 });
-
-console.log('test');
-
-
 
 // $(document).ready(function () {
 //   /* WHEN DEVICE WIDTH CHANGED */
@@ -27,33 +33,6 @@ console.log('test');
 //       deviceByWidth = identDeviceByWidth();
 //       // Код при смене ширины
 //     }
-//   });
-
-//   /* MENU */
-//   const menu = $('.mobileMenu'),
-//     menuOpenBtn = $('.menuToggleBtn'),
-//     menuOverlay = $('.menuOverlay');
-
-//   menuOpenBtn.click(function (evt) {
-//     evt.preventDefault();
-
-//     if ($(this).hasClass('active')) {
-//       $(this).removeClass('active');
-//       unlockBodyScroll();
-//       menu.removeClass('active');
-//       menuOverlay.fadeOut('slow');
-//     } else {
-//       $(this).addClass('active');
-//       lockBodyScroll('.mobileMenu');
-//       menu.addClass('active');
-//       menuOverlay.fadeIn('slow');
-//     }
-//   });
-
-//   /* MODAL */
-//   $('.modalOverlay, .closeModalBtn').click(function () {
-//     $('.modal').fadeOut(300);
-//     unlockBodyScroll();
 //   });
 
 //   /* FUNCTIONS */

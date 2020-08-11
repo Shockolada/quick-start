@@ -8,33 +8,50 @@
   @@include('./html-partials/sections/main/page-header.html')
 
   <main class="page-content">
-    @@include('./html-partials/snippets/modal.html')
-
+    <!-- @@include('./html-partials/snippets/modal.html') -->
     <div class="container">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, sit. Voluptatum cumque quia libero laboriosam eveniet ut fugit nesciunt nam! Id officia voluptate ad? Recusandae laboriosam odit aliquam alias exercitationem!</p>
+
+    <style>
+      #wrapper {
+        display: none;
+      }
+      
+      .slideMeDown {
+        transition: height 1s ease-out;
+        display: block;
+        font-size: 24px;
+        background: #4679bd;
+        color: white;
+        width: 50%;
+        height: 0;
+        overflow: hidden;
+        padding: 20px;
+      }
+
+    </style>
+
+<div id="wrapper">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nihil quis ea numquam, tempore similique impedit fugit ab illo earum inventore expedita ducimus accusamus facere exercitationem repellat quidem id ratione quaerat!
+</div>
+
+      <button class="btn">Click to slideDown!</button>
+      <div class="slide-container">
+        <a href="#" class="slideMeDown">cool!</a>
+      </div>
+    </div>
+
+    <button class="jq-trigger">jq</button>
+    <div class="jq">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, eaque sit provident doloremque aperiam consequatur. Voluptates sit laudantium id sed fugit tenetur, recusandae vero, aliquid iusto nam sapiente aspernatur eos.
     </div>
 
   </main> <!-- / main -->
 
   @@include('./html-partials/sections/main/page-footer.html')
-  
-  <!-- @@include('./html-partials/templates/modal.html') -->
+
+  @@include('./html-partials/snippets/modal-overlay.html')
 
   <script src="js/main.js"></script>
-
 </body>
 
 </html>

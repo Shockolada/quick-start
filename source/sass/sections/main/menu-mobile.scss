@@ -9,8 +9,8 @@
     height: calc(100vh - 45px);
     padding: 20px;
     padding-right: 30px;
-    box-sizing: border-box;
     background-color: #ffffff;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
 
     transition: 0.35s transform 0.2s cubic-bezier(.25, 1.7, .35, .8), 0.3s top linear;
     transform: translateX(100%);
