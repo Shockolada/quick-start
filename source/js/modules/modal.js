@@ -1,7 +1,7 @@
 import calcScrollWidth from '../services/calc-scroll-width';
 
 const modals = () => {
-  function bindModal(triggerSelector, modalSelector, closeSelector) {
+  function bindModal(triggerSelector, modalSelector, closeSelector = '.modal__close') {
 
     const trigger = document.querySelectorAll(triggerSelector),
       modal = document.querySelector(modalSelector),
@@ -31,7 +31,7 @@ const modals = () => {
 
     try {
       modal.addEventListener('click', (evt) => {
-        if (evt.target === modal) {
+        if (evt.target === modal || evt.target === modal.querySelector('.modal__container')) {
           closeModal();
         }
       });
@@ -64,9 +64,8 @@ const modals = () => {
     }
   }
 
-
-  bindModal('[data-trigger-modal', '#modal', '.modal__close');
-  bindModal('[data-trigger-modal-2', '#modal-2', '.modal__close');
+  bindModal('[data-trigger-modal', '#modal');
+  bindModal('[data-trigger-modal-center', '#modal-center');
 };
 
 export default modals;

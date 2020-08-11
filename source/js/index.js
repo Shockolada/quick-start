@@ -3,6 +3,8 @@ import $ from 'jquery';
 import modals from './modules/modal';
 import pageHeader from './modules/header';
 import menu from './modules/menu';
+import pushFooterDown from './modules/push-footer';
+import {slidingUp, slidingDown} from './services/sliding';
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -11,11 +13,8 @@ window.addEventListener('DOMContentLoaded', () => {
   modals();
   pageHeader();
   menu();
+  pushFooterDown();
 });
-
-console.log('test');
-
-
 
 // $(document).ready(function () {
 //   /* WHEN DEVICE WIDTH CHANGED */
